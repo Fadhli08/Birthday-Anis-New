@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Day Anis Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #b3d9ff, #99c2ff); /* Smooth dark red background */
+            background-image: 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png');
+            background-size: 130px, 140px, 150px, 120px, 135px, 145px, 160px, 170px, 125px, 155px; /* Further increased sizes */
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+            background-position: 
+                5% 15%,   /* First logo */
+                85% 10%,   /* Second logo */
+                50% 45%,   /* Third logo */
+                20% 65%,   /* Fourth logo */
+                75% 75%,   /* Fifth logo */
+                35% 25%,   /* Sixth logo */
+                90% 50%,   /* Seventh logo */
+                10% 85%,   /* Eighth logo */
+                60% 20%,   /* Ninth logo */
+                30% 80%;   /* Tenth logo */
+            animation: moveBackground 10s linear infinite; /* Slow movement */
+        }
+
+        @keyframes moveBackground {
+            from {
+                background-position: 
+                    5% 15%, 85% 10%, 50% 45%, 20% 65%, 75% 75%, 35% 25%, 90% 50%, 10% 85%, 60% 20%, 30% 80%;
+            }
+            to {
+                background-position: 
+                    5% 20%, 85% 15%, 50% 50%, 20% 70%, 75% 80%, 35% 30%, 90% 55%, 10% 90%, 60% 25%, 30% 85%;
+            }
+        }
+
+
+
+        .container {
+            background: pink;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 5px solid pink;
+            width: 300px;
+        }
+
+        .heart-image {
+            width: 150px;
+            height: 150px;
+            background-image: url('cinamon.png'); /* Add a heart image */
+            background-size: cover;
+            margin: 10px auto;
+        }
+
+        .password-input {
+            width: 80%;
+            padding: 10px;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 5px;
+            border: 2px solid papayawhip;
+        }
+        
+        .keypad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .key {
+            padding: 15px;
+            font-size: 18px;
+            background: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .key:active {
+            background: #b3d9ff;
+            color: white;
+        }
+        .wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 5px solid pink;
+            padding: 20px;
+            border-radius: 15px;
+            background: white;
+        }
+        .photo {
+            width: 150px;
+            height: 200px;
+            background-image: url('Gbr1.jpg'); /* Add couple photo */
+            background-size: cover;
+            border-radius: 10px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .popup button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #b3d9ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media (min-width: 600px) {
+            .wrapper {
+                flex-direction: row;
+                gap: 20px;
+            }
+
+            .photo {
+                width: 200px;
+                height: 200px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+
+        .lock-icon {
+            font-size: 40px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .password-input img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .title {
+            font-size: 60px;
+            font-weight: bold;
+            color: pink;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .password-hint {
+            margin-top: 15px;
+            font-size: 14px;
+            color: white;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 5px 10px;
+            border-radius: 5px;
+            width: 90%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">MY BABY ANIS</div>
+    <div class="wrapper">
+        <div class="photo"></div>
+        <div class="container">
+            <div class="lock-icon"><i class="fas fa-lock"></i></div>
+            <input type="password" class="password-input" id="password" placeholder="Enter Password" disabled>
+
+            <div class="password-hint">
+                Hint: Your Birthday🤍 00/00/0000 
+            </div>
+            <div class="keypad">
+                <button class="key" onclick="addNumber('1')">1</button>
+                <button class="key" onclick="addNumber('2')">2</button>
+                <button class="key" onclick="addNumber('3')">3</button>
+                <button class="key" onclick="addNumber('4')">4</button>
+                <button class="key" onclick="addNumber('5')">5</button>
+                <button class="key" onclick="addNumber('6')">6</button>
+                <button class="key" onclick="addNumber('7')">7</button>
+                <button class="key" onclick="addNumber('8')">8</button>
+                <button class="key" onclick="addNumber('9')">9</button>
+                <button class="key" onclick="clearPassword()">C</button>
+                <button class="key" onclick="addNumber('0')">0</button>
+                <button class="key" onclick="checkPassword()">✔</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="popup" class="popup">
+        <p>Access Granted! Welcome to My Baby Anis Birthday Day Page 🤍</p>
+        <button onclick="redirectToHome()">OK</button>
+    </div>
+
+    <script>
+        let password = "12052003"; // Set the correct password here
+        let input = "";
+        
+        function addNumber(num) {
+            if (input.length < 8) {
+                input += num;
+                document.getElementById("password").value = "*".repeat(input.length);
+            }
+        }
+
+        function clearPassword() {
+            input = "";
+            document.getElementById("password").value = "";
+        }
+
+        function checkPassword() {
+            if (input === password) {
+                document.getElementById("popup").style.display = "block";
+            } else {
+                alert("Wrong Password! Try Again.");
+                clearPassword();
+            }
+        }
+
+        function redirectToHome() {
+            window.location.href = "home.html";
+        }
+    </script>
+</body>
+</html>

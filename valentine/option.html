@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Options</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #b3d9ff, #99c2ff);
+            background-image: 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png');
+            background-size: 130px, 140px, 150px, 120px, 135px, 145px, 160px, 170px, 125px, 155px;
+            background-repeat: no-repeat;
+            background-position: 
+                5% 15%,   
+                85% 10%,   
+                50% 45%,   
+                20% 65%,   
+                75% 75%,   
+                35% 25%,   
+                90% 50%,   
+                10% 85%,   
+                60% 20%,   
+                30% 80%;
+            animation: moveBackground 10s linear infinite;
+        }
+
+        /* Petak pink lebih luas seperti dalam home.html */
+        .option-container {
+            background: pink;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 800px; /* Lebarkan petak pink */
+            text-align: center;
+            min-height: 400px; /* Supaya petak lebih tinggi */
+        }
+
+        /* Happy Birthday Anis di bahagian atas */
+        .countdown-header {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            color: #ff6699;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 30px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .countdown-header img {
+            width: 50px; /* Besarkan gambar */
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid white;
+        }
+
+        /* Button-container di tengah */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1; /* Supaya button berada di tengah */
+        }
+
+        /* Button lebih besar & tengah */
+        .option-button {
+            width: 100%; /* Lebarkan button */
+            padding: 18px;
+            margin: 12px 0;
+            font-size: 18px; /* Besarkan teks */
+            background: white;
+            color: #ff6699;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-button:hover {
+            background: #ff6699;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="option-container">
+        <!-- Teks Happy Birthday Anis berada di atas -->
+        <div class="countdown-header">
+            <img src="Gbr10.jpg" alt="Profile Picture">
+            Happy Birthday Anis🎂, Click mana ii button untuk ke page berikut ❤️
+        </div>
+
+        <!-- Button-container di tengah -->
+        <div class="button-container">
+            <button class="option-button" onclick="location.href='home.html'">Video birthday + Countdown Birthday Anis🎂</button>
+            <button class="option-button" onclick="location.href='codepuzzle.html'">Game Puzzle🧩</button>
+            <button class="option-button" onclick="location.href='VideoAnis.html'">Video JJ Anis HEHEHE🤍</button>
+            <button class="option-button" onclick="location.href='codeanimate.html'">Animate + Secret Code (Letter)🐱</button>
+        </div>
+    </div>
+</body>
+</html>

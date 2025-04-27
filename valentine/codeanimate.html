@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Love Letter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #b3d9ff, #99c2ff); /* Smooth dark red background */
+            background-image: 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png');
+            background-size: 130px, 140px, 150px, 120px, 135px, 145px, 160px, 170px, 125px, 155px; /* Further increased sizes */
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+            background-position: 
+                5% 15%,   /* First logo */
+                85% 10%,   /* Second logo */
+                50% 45%,   /* Third logo */
+                20% 65%,   /* Fourth logo */
+                75% 75%,   /* Fifth logo */
+                35% 25%,   /* Sixth logo */
+                90% 50%,   /* Seventh logo */
+                10% 85%,   /* Eighth logo */
+                60% 20%,   /* Ninth logo */
+                30% 80%;   /* Tenth logo */
+            animation: moveBackground 10s linear infinite; /* Slow movement */
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .input-field {
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid pink;
+            border-radius: 5px;
+            text-align: center;
+            width: 200px;
+        }
+
+        .submit-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background: #ff3385;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: white;
+            color: #ff3385;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: red;
+            display: none;
+        }
+
+        .letter-container {
+            display: none;
+            width: 100%;
+            max-width: 900px;
+            height: 100vh; /* Pastikan ia memenuhi satu halaman penuh */
+            padding: 0;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="unlock-container">
+        <h1>🔐 Unlock Your Secret Love Letter 💌</h1>
+        <p>Jawab soalan untuk membuka surat:</p>
+        <p><strong>Apakah nama kucing warna putih Anis? </strong></p>
+        <input type="text" class="input-field" id="answer" placeholder="Enter answer here">
+        <br>
+        <button class="submit-btn" onclick="checkAnswer()">Unlock</button>
+        <p class="message" id="wrongMessage">❌ Oops! Try again.</p>
+    </div>
+    
+    <iframe class="letter-container" id="letter"></iframe>
+
+    <script>
+        function checkAnswer() {
+            let answer = document.getElementById("answer").value.trim(); // Pastikan tidak ada ruang tambahan
+            let correctAnswer1 = "Ateh";  // Jawapan pertama yang boleh diterima
+            let correctAnswer2 = "ateh"; // Jawapan kedua yang boleh diterima
+            
+            if (answer === correctAnswer1 || answer === correctAnswer2) {
+                document.getElementById("unlock-container").style.display = "none";
+                document.getElementById("letter").style.display = "block";
+                loadLetter();
+            } else {
+                document.getElementById("wrongMessage").style.display = "block";
+            }
+        }
+    
+        function loadLetter() {
+            document.getElementById("letter").src = "letter.html";
+        }
+    </script>
+    
+</body>
+</html>

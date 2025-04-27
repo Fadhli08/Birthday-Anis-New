@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #b3d9ff, #99c2ff); /* Smooth dark red background */
+            background-image: 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png');
+            background-size: 130px, 140px, 150px, 120px, 135px, 145px, 160px, 170px, 125px, 155px; /* Further increased sizes */
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+            background-position: 
+                5% 15%,   /* First logo */
+                85% 10%,   /* Second logo */
+                50% 45%,   /* Third logo */
+                20% 65%,   /* Fourth logo */
+                75% 75%,   /* Fifth logo */
+                35% 25%,   /* Sixth logo */
+                90% 50%,   /* Seventh logo */
+                10% 85%,   /* Eighth logo */
+                60% 20%,   /* Ninth logo */
+                30% 80%;   /* Tenth logo */
+            animation: moveBackground 10s linear infinite; /* Slow movement */
+        }
+
+        @keyframes moveBackground {
+            from {
+                background-position: 
+                    5% 15%, 85% 10%, 50% 45%, 20% 65%, 75% 75%, 35% 25%, 90% 50%, 10% 85%, 60% 20%, 30% 80%;
+            }
+            to {
+                background-position: 
+                    5% 20%, 85% 15%, 50% 50%, 20% 70%, 75% 80%, 35% 30%, 90% 55%, 10% 90%, 60% 25%, 30% 85%;
+            }
+        }
+
+        .letter-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            height: 100%;
+            text-align: left;
+        }
+
+        h1 {
+            color: #ff3385;
+            text-align: center;
+        }
+
+        .love-message {
+            font-style: italic;
+            color: #ff6699;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .home-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: #ff3385;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease;
+            display: block;
+            text-align: center;
+        }
+
+        .home-button:hover {
+            background: white;
+            color: #ff3385;
+        }
+    </style>
+</head>
+<body>
+    <div class="letter-container">
+        <h1>Happy Birthday's Day! 💖</h1>
+        
+        <p class="love-message">Happy Birthday, To My Lovely Anis🌹.</p>
+        
+        <p>Happy Birthday Anis🎉✨Hari tok adalah hari istimewa ktk sebab menandakan saat dunia dianugerahkan dengan seseorang yang luar biasa—iaitu ktk (Anis🌹). 
+        Kmk bersyukur setiap hari sebab diberi peluang untuk mengenali,mencintai, dan menyayangi insan istimewa seperti Anis🌹.
+        </p>
+
+        <p>Kehadiran ktk dalam hidup kmk ibarat sinar mentari yang menyinari setiap sudut hati kmk.
+        Walaupun kadang kala kmk rasa sunyi, ktklah yang membuat hidup kmk lebih berwarna.Sebab ktk selalu buat lawak and selalu support kmk if kmk rasa down💕.
+        Insya-Allah kmk akan berusahan untuk pergi ke Sibu suatu hari klk.
+        </p>
+
+        <p>Untuk Hari yang penuh bermakna bagi ktk ritok, Kmk just mok ktk tauk betapa kmk sayang ngan ktk. Setiap momment ktk balas status kmk,balas chat kmk di tiktok 
+        send gambar comel ktk ngan kmk, kmk sikkan lupakan.Sorry if sometime kmk mengemis gambar dengan ktk...Ya jak untuk kmk keep rindu dengan ktk HEHEHE.... tetapi mun ktk nak tauk ya adalah momment yang paling berharga bagi kmk even though kita duak sik pernah bertemu.</p>
+
+        <p>If one day ktk dah jadi milik orang lain ataupun kita dah bawa haluan sendiri, I just want to say
+            terima kasih kerana menjadi sebahagian dalam hidup kmk.Kmk happy gilak dapat mengenali ktk,tq sebab selalu sporting ngan kmk🌹. Happy Birthday My Baby Boo Anis🌹 Love You So Much💕 
+        </p>
+
+           <p> From: Am</p>
+            <p>To:Anis💕</p>
+    </div>
+    <button class="home-button" onclick="goHome()">🏠 Go Home</button>
+
+    <script>
+        function goHome() {
+            window.location.href = "option.html";  // Change if your home page is different
+        }
+    </script>
+</body>
+</html>

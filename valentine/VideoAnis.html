@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Video Gallery</title>
+    <style>
+      /* Tambah background cinamon dari login page */
+      body {
+        background: linear-gradient(to bottom, #b3d9ff, #99c2ff);
+        background-image: 
+          url('cinamon.png'), 
+          url('cinamon.png'), 
+          url('cinamon.png'), 
+          url('cinamon.png'), 
+          url('cinamon.png'),
+          url('cinamon.png'),
+          url('cinamon.png'),
+          url('cinamon.png'),
+          url('cinamon.png'),
+          url('cinamon.png');
+        background-size: 130px, 140px, 150px, 120px, 135px, 145px, 160px, 170px, 125px, 155px;
+        background-repeat: no-repeat;
+        background-position: 
+          5% 15%, 85% 10%, 50% 45%, 20% 65%, 75% 75%, 
+          35% 25%, 90% 50%, 10% 85%, 60% 20%, 30% 80%;
+        animation: moveBackground 10s linear infinite;
+      }
+
+      @keyframes moveBackground {
+        from {
+          background-position: 
+            5% 15%, 85% 10%, 50% 45%, 20% 65%, 75% 75%, 
+            35% 25%, 90% 50%, 10% 85%, 60% 20%, 30% 80%;
+        }
+        to {
+          background-position: 
+            5% 20%, 85% 15%, 50% 50%, 20% 70%, 75% 80%, 
+            35% 30%, 90% 55%, 10% 90%, 60% 25%, 30% 85%;
+        }
+      }
+      
+      /* Style untuk header */
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 10;
+      }
+      
+      .header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        background: linear-gradient(to right, #ff8a00, #e52e71);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        margin: 0;
+        letter-spacing: 3px;
+      }
+      
+      /* Style untuk back button */
+      .back-button {
+        display: inline-block;
+        margin: 30px auto;
+        padding: 12px 30px;
+        background: linear-gradient(45deg, #ff8a00, #e52e71);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        text-decoration: none;
+      }
+      
+      .back-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      .back-button:active {
+        transform: translateY(1px);
+      }
+      
+      .back-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #e52e71, #ff8a00);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .back-button:hover::before {
+        opacity: 1;
+      }
+      
+      .back-button i {
+        margin-right: 8px;
+      }
+      
+      .button-container {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="header">
+      <h1>ANIS🤍</h1>
+    </div>
+
+    <div class="container">
+      <div class="video-wrapper">
+        <video loop muted preload="metadata">
+          <source src="Anis1.1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video loop muted preload="metadata">
+          <source src="Anis2.1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video loop muted preload="metadata">
+          <source src="Anis3.1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video loop muted preload="metadata">
+          <source src="Anis4.1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video loop muted preload="metadata">
+          <source src="Anis5.1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    
+    <div class="button-container">
+      <button onclick="goHome()" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </button>
+    </div>
+
+    <script>
+      function goHome() {
+        window.location.href = "option.html";  // Akan redirect ke option.html
+      }
+      
+      // Script asal untuk video gallery
+      document.addEventListener('DOMContentLoaded', function() {
+        const videoWrappers = document.querySelectorAll('.video-wrapper');
+        
+        videoWrappers.forEach(wrapper => {
+          const video = wrapper.querySelector('video');
+          
+          wrapper.addEventListener('mouseenter', () => {
+            video.play();
+            video.muted = false;
+          });
+          
+          wrapper.addEventListener('mouseleave', () => {
+            video.pause();
+            video.currentTime = 0;
+            video.muted = true;
+          });
+          
+          video.muted = true;
+        });
+      });
+    </script>
+  </body>
+</html>

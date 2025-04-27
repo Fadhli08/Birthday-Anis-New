@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Picture</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #b3d9ff, #99c2ff); /* Smooth dark red background */
+            background-image: 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png');
+            background-size: 130px, 140px, 150px, 120px, 135px, 145px, 160px, 170px, 125px, 155px; /* Further increased sizes */
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+            background-position: 
+                5% 15%,   /* First logo */
+                85% 10%,   /* Second logo */
+                50% 45%,   /* Third logo */
+                20% 65%,   /* Fourth logo */
+                75% 75%,   /* Fifth logo */
+                35% 25%,   /* Sixth logo */
+                90% 50%,   /* Seventh logo */
+                10% 85%,   /* Eighth logo */
+                60% 20%,   /* Ninth logo */
+                30% 80%;   /* Tenth logo */
+            animation: moveBackground 10s linear infinite; /* Slow movement */
+        }
+
+        @keyframes moveBackground {
+            from {
+                background-position: 
+                    5% 15%, 85% 10%, 50% 45%, 20% 65%, 75% 75%, 35% 25%, 90% 50%, 10% 85%, 60% 20%, 30% 80%;
+            }
+            to {
+                background-position: 
+                    5% 20%, 85% 15%, 50% 50%, 20% 70%, 75% 80%, 35% 30%, 90% 55%, 10% 90%, 60% 25%, 30% 85%;
+            }
+        }
+
+        .container {
+            background: #85b6ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: white;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #85b6ff;
+            cursor: pointer;
+        }
+
+    .container {
+        background: pink;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers everything inside */
+        text-align: center;
+    }
+
+    h1 {
+        color: white;
+        font-size: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    h4 {
+        color: #ff3385;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .message {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #ff3385;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>You🤍</h1>
+        <h4>Happy birthday to the most beautiful woman in the world, Anis.🌹
+            Comel semua gambar Anis disitok 😘😘
+        </h4>
+        <div class="gallery">
+            <img src="Gbr9.jpg" alt="Couple 1">
+            <img src="Gbr3.jpg" alt="Couple 2">
+            <img src="Gbr4.jpg" alt="Couple 3">
+            <img src="Gbr5.jpg" alt="Couple 4">
+            <img src="Gbr10.jpg" alt="Couple 5">
+            <img src="Gbr12.jpg" alt="Couple 6">
+            <img src="Gbr11.jpg" alt="Couple 6">
+            <img src="Gbr7.jpg" alt="Couple 6">
+            <img src="Gbr6.jpg" alt="Couple 6">
+        </div>
+        <div class="message" onclick="navigateToLetter()">Baby 😊 Click untuk back!</div>
+    </div>
+    
+    <script>
+        function navigateToLetter() {
+            window.location.href = "option.html";
+        }
+    </script>
+</body>
+</html>

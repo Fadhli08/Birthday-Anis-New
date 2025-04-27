@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Puzzle Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #b3d9ff, #99c2ff);
+            background-image: 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'), 
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png'),
+                url('cinamon.png');
+            background-size: 130px, 140px, 150px, 120px, 135px, 145px, 160px, 170px, 125px, 155px;
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+            background-position: 
+                5% 15%,   
+                85% 10%,   
+                50% 45%,   
+                20% 65%,   
+                75% 75%,   
+                35% 25%,   
+                90% 50%,   
+                10% 85%,   
+                60% 20%,   
+                30% 80%;
+            animation: moveBackground 10s linear infinite;
+        }
+
+        .game-container {
+            background: pink;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .puzzle-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            margin-top: 20px;
+        }
+
+        .piece {
+            width: 100px;
+            height: 100px;
+            background-size: 300px 300px;
+            cursor: grab;
+            border: 2px solid white;
+            transition: transform 0.3s ease;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 20px;
+            color:#ff3385;
+        }
+
+        .home-button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: #ff3385;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .home-button:hover {
+            background: white;
+            color: #ff3385;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h3>💖 Arrange the Puzzle to Unlock Your Surprise! 💖</h1>
+        <div class="puzzle-container" id="puzzleContainer"></div>
+        <p class="success-message" id="successMessage">🎉 Yeayyyy Anis berjaya selesaikan puzzle💖, congrats My Love! 🎉</p>
+        <button class="home-button" id="homeButton" onclick="goHome()">🏠 Nah click sitok</button>
+    </div>
+
+    <script>
+        const correctOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+        let currentOrder = [...correctOrder].sort(() => Math.random() - 0.5);
+
+        function createPuzzle() {
+            const container = document.getElementById("puzzleContainer");
+            container.innerHTML = "";
+            currentOrder.forEach((index, i) => {
+                let piece = document.createElement("div");
+                piece.className = "piece draggable";
+                piece.style.backgroundImage = "url('Gbr1.jpg')";
+                piece.style.backgroundPosition = `-${(index % 3) * 100}px -${Math.floor(index / 3) * 100}px`;
+                piece.setAttribute("draggable", "true");
+                piece.setAttribute("data-index", i);
+                piece.addEventListener("dragstart", dragStart);
+                piece.addEventListener("dragover", dragOver);
+                piece.addEventListener("drop", drop);
+                container.appendChild(piece);
+            });
+        }
+
+        function dragStart(e) {
+            e.dataTransfer.setData("text", e.target.getAttribute("data-index"));
+        }
+
+        function dragOver(e) {
+            e.preventDefault();
+        }
+
+        function drop(e) {
+            e.preventDefault();
+            let draggedIndex = e.dataTransfer.getData("text");
+            let targetIndex = e.target.getAttribute("data-index");
+            
+            [currentOrder[draggedIndex], currentOrder[targetIndex]] = [currentOrder[targetIndex], currentOrder[draggedIndex]];
+            
+            createPuzzle();
+            checkCompletion();
+        }
+
+        function checkCompletion() {
+            if (JSON.stringify(currentOrder) === JSON.stringify(correctOrder)) {
+                document.getElementById("successMessage").style.display = "block";
+                document.getElementById("homeButton").style.display = "block";
+            }
+        }
+
+        function goHome() {
+            window.location.href = "game.html";
+        }
+
+        createPuzzle();
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Scrapbook</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffccff, #ff99cc);
+            font-family: Arial, sans-serif;
+        }
+
+        .scrapbook-container {
+            width: 400px;
+            height: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .page img {
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        .page p {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #ff3385;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .nav-btn {
+            background: pink;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nav-btn:hover {
+            background: #ff6699;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="scrapbook-container">
+        <div class="page" id="page1" style="display: flex;">
+            <img src="Gbr1.jpg" alt="Memory 1">
+            <p>Kenangan pertama kita bersama 💖</p>
+        </div>
+        <div class="page" id="page2">
+            <img src="Gbr2.jpg" alt="Memory 2">
+            <p>Momen paling indah dan berharga 😊</p>
+        </div>
+        <div class="page" id="page3">
+            <img src="Gbr3.jpg" alt="Memory 3">
+            <p>Terima kasih kerana sentiasa di sisi 🌹</p>
+        </div>
+        
+        <div class="navigation">
+            <button class="nav-btn" onclick="prevPage()">⬅️ Prev</button>
+            <button class="nav-btn" onclick="nextPage()">Next ➡️</button>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        let totalPages = 3;
+
+        function showPage(pageNumber) {
+            for (let i = 1; i <= totalPages; i++) {
+                document.getElementById("page" + i).style.display = "none";
+            }
+            document.getElementById("page" + pageNumber).style.display = "flex";
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages) {
+                currentPage++;
+            } else {
+                currentPage = 1; // Balik ke halaman pertama
+            }
+            showPage(currentPage);
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+            } else {
+                currentPage = totalPages; // Balik ke halaman terakhir
+            }
+            showPage(currentPage);
+        }
+    </script>
+</body>
+</html>
